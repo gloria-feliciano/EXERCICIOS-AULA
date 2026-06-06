@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <Title>Exemplos</Title>
+        <meta charset="utf-8">
+        <!--implementando o css--> <!--comentário html-->
+        <style>
+            nav {
+                background-color: #d2ba33; /* Fundo escuro */ /*comentário no css*/
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Centralizar o conteúdo */
+        }
+
+        nav ul {
+            list-style-type: none; /* Remover marcadores da lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Dispor os itens lado a lado */
+            justify-content: center; /* Centralizar horizontalmente */
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Espaço entre os itens */
+        }
+
+        nav ul li a {
+            text-decoration: none; /* Remover sublinhado */
+            color: rgb(15, 14, 14); /* Cor do texto */
+            font-size: 16px;
+            transition: color 0.3s; /* Efeito de transição */
+        }
+
+        nav ul li a:hover {
+            color: #ed5f23; /* Cor ao passar o mouse */
+        }
+
+        form{
+            font-size: 16px;
+            background: #cc3434; /*cor de fundo*/
+            max-width: 200px; /*largura máxima*/
+            margin: 0 auto; /*margem*/
+            padding: 10px 10px 10px 10px; /*espaço interno entre texto e borda*/
+        }
+        </style>
+    </head>
+    <body>
+        <!--menu-->
+        <nav>
+            <ul>
+                <li><a href="#">Tabela</a></li>
+                <li><a href="#">Formulário</a></li>
+                <li><a href="#">Widget</a></li>
+                <li><a href="#">Lista não ordenada</a></li>
+                <li><a href="#">lista de definição</a></li>
+            </ul>
+        </nav>
+        <br>
+        <!--como formatar uma tabela-->
+        <h1>Tabela</h1>
+        <table>
+            <tr>
+                <td>Dado 1</td>
+                <td>Dado 2</td>
+            </tr>
+            <tr>
+                <td>Dado 3</td>
+                <td>Dado 4</td>
+            </tr>
+        </table>
+        <br>
+        <!--como formatar um formulário-->
+        <h1>Formulário</h1>
+        <form method="get" action="envio_dados.php">
+            <input type="text" name="nome" placeholder="Digite seu nome">
+            <br><br>
+            <input type="email" name="email" placeholder="Digite seu e-mail">
+            <br><br>
+            <input type="submit" name="enviar" placeholder="Enviar"><br>
+        </form>
+        <br>
+        <!--commo formatar um widget-->
+        <h1>Widget</h1>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="fname"> Nome:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname"> Sobrenome:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email"> Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="birthday"> Data de aniversário:</label>
+            <input type="date" id="birthday" name="birthday"><br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+        <br>
+        <!--lists não ordenada-->
+        <h1>Lista não ordenada</h1>
+        <ul>
+            <li> códigos</li>
+            <li>materiais</li>
+            <li>aulas</li>
+        </ul>
+        <br>
+        <!--lista numerada-->
+        <h1>lista de definição</h1>
+        <ol>
+            <li>códigos</li>
+            <li>materiais</li>
+            <li>aulas</li>
+        </ol>
+        <br>
+        <!--fomulário 2-->
+   <form name="formteste" action="" method="post">
+    <h1>Contato</h1>
+    <p class="nome">
+     <input type="text" name="nome" placeholder="Informe seu nome" required="required"></p>
+    <p class="email">
+    <input type="email" name="email" placeholder="Informe seu email" required="required"> </p>
+    <p class="mensagem">
+        <textarea type="text" name="mensagem" placeholder="Deixe sua mensagem"></textarea> </p>
+    <p class="enviar">
+        <input type="submit" name="enviar" value="Enviar"> </p>    
+   </form>
+   <br>
+<!--nav (seção com links de navegação)-->
+<nav id="menu">
+       <a href="#contatos">contatos</a>
+       <a href="#sobre">sobre</a>
+       <a href="#endereço">endereço</a>
+</nav>
+    </body>
+</html>

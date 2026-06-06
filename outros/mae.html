@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Aniversário</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: rgb(53, 128, 174);
+      color: #fff;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      outline: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 2px 12px #ff6f61;
+    }
+
+    button {
+      background: #ff4b2b;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 20px rgba(255, 75, 43, 0.7);
+    }
+
+    #mensagem {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffe6e1;
+      min-height: 48px;
+    }
+
+    .coracao {
+      position: absolute;
+      color: red;
+      font-size: 24px;
+      pointer-events: none;
+      user-select: none;
+      animation: cair 3s linear forwards;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid red;
+      border-radius: 50%;
+      padding: 10px;
+      background: rgba(255, 0, 0, 0.5);
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Digite seu nome</h1>
+    <input type="text" id="nome" placeholder="Seu nome aqui..." />
+    <button id="btnAniversario">Enviar</button>
+    <div id="mensagem"></div>
+  </div>
+  <script>
+    const btn = document.getElementById('btnAniversario');
+    const inputNome = document.getElementById('nome');
+    const divMsg = document.getElementById('mensagem');
+    let intervaloCoracoes = null;
+
+    // Texto mostrado após o clique
+    const textoDepoisAlert = "Hoje, 03/06 de 2025, eu te desejo um feliz aniversário mãe. Eu te amo! Você é a pessoa mais especial para mim. Hoje é teu dia. Em cada gesto, um cuidado, um carinho. Te agradeço, mãe, por tudo que é, pelo seu exemplo. Que a felicidade sempre te encontre também! Que nunca te falte saúde e alegria. Que a vida te sorria a cada dia.";
+
+    btn.addEventListener('click', () => {
+      const nome = inputNome.value.trim();
+
+      // Nomes válidos
+      const nomesValidos = ['glaucia', 'Glaucia'];
+
+      if (!nome) {
+        divMsg.textContent = "Por favor, digite um nome!";
+        divMsg.style.color = '#ff8a8a';
+        return;
+      }
+
+      if (!nomesValidos.includes(nome)) {
+        divMsg.textContent = "Nome inválido. Por favor, digite 'glaucia', 'Glaucia'.";
+        divMsg.style.color = '#ff8a8a';
+        return;
+      }
+
+      // Exibe a mensagem
+      divMsg.style.color = '#ffdad3';
+      divMsg.textContent = textoDepoisAlert;
+
+      if (intervaloCoracoes !== null) return;
+
+      intervaloCoracoes = setInterval(() => criarCoracao(), 300);
+    });
+
+    function criarCoracao() {
+      const coracao = document.createElement('div');
+      coracao.className = 'coracao';
+      coracao.textContent = `❤️`;
+      coracao.style.left = Math.random() * 100 + 'vw'; // posição horizontal aleatória
+      coracao.style.top = '-30px'; // começa um pouco acima da viewport
+      document.body.appendChild(coracao);
+
+      coracao.addEventListener('animationend', () => {
+        coracao.remove();
+      });
+    }
+  </script>
+</body>
+
+</html>

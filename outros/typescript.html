@@ -1,0 +1,17 @@
+//Definição de constantes e variáveis
+const valorInicial: number = 1000; // Valor do investimento
+const taxaAnual: number = 14; // taxa de jurus ano ano (em %)
+const meses: number = 12; // Período do investimento em meses
+
+// cálculo da taxa em juros mensal
+const taxaMensal: number = taxaAnual / 12 / 100;
+
+// cálculo do montante final usando jurus compostos
+const montanteFinal: number = valorInicial * Math.pow(1 + taxaMensal, meses);
+
+// cálculo do lucro
+const lucro: number = montanteFinal - valorInicial;
+
+// Exibição dos lucros
+console.log("Monntante Final: R$", montanteFinal.toFixed(2));
+console.log("Lucro: R$", lucro.toFixed(2));

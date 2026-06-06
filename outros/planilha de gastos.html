@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Controle Financeiro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Planilha de Controle Financeiro</h1>
+
+<table>
+    <tr>
+        <th>Categoria</th>
+        <th>Valor (R$)</th>
+    </tr>
+    <tr>
+        <td>Salário</td>
+        <td><input type="number" id="salario" value="0"></td>
+    </tr>
+    <tr>
+        <td>Mensalidade</td>
+        <td><input type="number" id="mensalidade" value="0"></td>
+    </tr>
+    <tr>
+        <td>Spotify</td>
+        <td><input type="number" id="spotify" value="0"></td>
+    </tr>
+    <tr>
+        <td>Fatura do Cartão</td>
+        <td><input type="number" id="faturaCartao" value="0"></td>
+    </tr>
+    <tr>
+        <td>Lazer</td>
+        <td><input type="number" id="lazer" value="0"></td>
+    </tr>
+</table>
+
+<h2>Resultado Final</h2>
+<p>Saldo Disponível: R$ <span id="resultado">0</span></p>
+
+<button onclick="calcular()">Calcular</button>
+
+<script>
+    function calcular() {
+        var salario = parseFloat(document.getElementById('salario').value) || 0;
+        var mensalidade = parseFloat(document.getElementById('mensalidade').value) || 0;
+        var spotify = parseFloat(document.getElementById('spotify').value) || 0;
+        var faturaCartao = parseFloat(document.getElementById('faturaCartao').value) || 0;
+        var lazer = parseFloat(document.getElementById('lazer').value) || 0;
+
+        var totalDespesas = mensalidade + spotify + faturaCartao + lazer;
+        var saldo = salario - totalDespesas;
+
+        document.getElementById('resultado').innerText = saldo.toFixed(2);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de estrutura de rede</title>
+</head>
+
+<body>
+    <h1> Topologias de rede</h1>
+    <h3> O que é topologia de rede?</h3>
+    <p>A topologia de rede é a forma como os dispositivos (computadores, servidores, roteadores, switches, etc.) estão
+        interconectados dentro de um ambiente de TI. Ela define como os dados circulam e influenciam diretamente o
+        desempenho, a segurança e a escalabilidade da rede.</p>
+    <h3>Principais tipos</h3>
+    <p>Barramento- Todos os dispositivos compartilham o mesmo meio de comunicação (cabo principal). Simples, mas
+        suscetível a falhas e congestionamento. <br>
+
+        Anel- Os dispositivos são conectados em um circuito fechado. Tem bom controle de tráfego, mas se um nó falha, a
+        rede pode parar. <br>
+
+        Malha– Cada dispositivo pode se conectar a vários outros. Alta redundância e segurança, mas custo elevado. <br>
+
+        Estrela– Todos os dispositivos se conectam a um switch central. Melhor controle e gerenciamento, além de ser
+        mais fácil de escalar. <br>
+
+        Híbrida– Combina diferentes topologias para melhor desempenho e segurança.</p>
+    <h3>melhor topologia para uma empresa de médio porte</h3>
+    <p>A topologia em estrela é a mais recomendada para uma empresa de médio porte que deseja priorizar segurança e
+        desempenho. <br>
+        Segurança: Como todo o tráfego passa pelo switch central, é mais fácil implementar medidas de segurança como
+        VLANs, firewalls e monitoramento. <br>
+        Gerenciamento Simples: Permite controle centralizado do tráfego e configuração eficiente. <br>
+        Escalabilidade: Novos dispositivos podem ser adicionados sem afetar o desempenho. <br>
+        Menor impacto de falhas: Se um dispositivo falhar, não compromete toda a rede, diferentemente de um anel ou
+        barramento.</p>
+    <h3>Reforçando a segurança</h3>
+    <p>
+        Segmentação com VLANs para isolar setores (RH, TI, atendimento). <br> Firewall e IDS/IPS para monitoramento e
+        bloqueio de tráfego suspeito. <br> Autenticação Multifator (MFA) para garantir acesso seguro. <br> Criptografia
+        de dados para proteger informações sensíveis.<br> Implementação do modelo Zero Trust, onde nenhum dispositivo ou
+        usuário é automaticamente confiável.<br> Bibliografia: chatgpt
+    </p>
+    <hr>
+    <h1>Segmentação de rede</h1>
+    <h3>O que é VLAN?</h3>
+    <p>Uma VLAN é um grupo lógico de locais de trabalho, servidores e dispositivos de rede que parecem estar na mesma
+        rede de área local (LAN), apesar da distribuição geográfica. Resumindo, o hardware nas mesmas VLANs permite que
+        o tráfego entre os equipamentos seja separado e mais seguro.</p><br>
+    <p>Porta de acesso: Uma porta de acesso transporta o tráfego para apenas uma VLAN. As portas de acesso são
+        geralmente chamadas de porta não marcada, pois há apenas uma VLAN nessa porta e o tráfego pode ser transmitido
+        sem marcas.
+        <br>Porta de tronco: Uma porta em um switch que transporta tráfego para mais de uma VLAN. As portas de tronco
+        são frequentemente chamadas de portas marcadas, pois há mais de uma VLAN nessa porta e o tráfego para todas as
+        VLANs, exceto uma, precisa ser marcado.
+        <br>VLAN nativo: A única VLAN em uma porta de tronco que não recebe uma marca. Qualquer tráfego que não tenha
+        marca será enviado para a VLAN nativa. É por isso que os dois lados de um tronco precisam ter a mesma VLAN
+        nativa, ou o tráfego não irá para o local correto.
+        <br>Melhor prática nº 1 - Atribuição de porta VLAN
+    </p>
+   <p>bibliografia:</p> <a href="https://www.cisco.com/c/pt_br/support/docs/smb/routers/cisco-rv-series-small-business-routers/1778-tz-VLAN-Best-Practices-and-Security-Tips-for-Cisco-Business-Routers.html" rel="stlytlesheet">cisco</a>
+<hr>
+<h1>Segurança de rede</h1>
+
+</body>
+
+</html>
